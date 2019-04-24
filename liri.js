@@ -118,7 +118,6 @@ switch (liriCommand) {
       }
       console.log(data);
       var dataArray = data.split(",");
-      console.log(dataArray);
       spotify
         .search({ type: "track", query: dataArray[1], limit: 1 })
         .then(function(response) {
