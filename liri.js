@@ -50,7 +50,15 @@ switch (liriCommand) {
     axios
       .get(`http://www.omdbapi.com/?apikey=trilogy&t=${userInput}`)
       .then(function(response) {
-        console.log(`Title: ${response.Title}`);
+        var movieInfo = response.data;
+        console.log(`Title: ${movieInfo.Title}`);
+        console.log(`Year: ${movieInfo.Year}`);
+        console.log(`IMDB rating: ${movieInfo.imdbRating}`);
+        console.log(`Rotten Tomatoes: ${movieInfo.Ratings[1].Value}`);
+        console.log(`Country: ${movieInfo.Country}`);
+        console.log(`Language: ${movieInfo.Language}`);
+        console.log(`Plot: ${movieInfo.Plot}`);
+        console.log(`Cast: ${movieInfo.Actors}`);
       })
       .catch(function(error) {
         console.log(error);
@@ -59,7 +67,15 @@ switch (liriCommand) {
         axios
       .get(`http://www.omdbapi.com/?apikey=trilogy&t=mr.nobody`)
       .then(function(response) {
-        console.log(response.data.Title);
+        var movieInfo = response.data;
+        console.log(`Title: ${movieInfo.Title}`);
+        console.log(`Year: ${movieInfo.Year}`);
+        console.log(`IMDB rating: ${movieInfo.imdbRating}`);
+        console.log(`Rotten Tomatoes: ${movieInfo.Ratings[1].Value}`);
+        console.log(`Country: ${movieInfo.Country}`);
+        console.log(`Language: ${movieInfo.Language}`);
+        console.log(`Plot: ${movieInfo.Plot}`);
+        console.log(`Cast: ${movieInfo.Actors}`);
       })
       .catch(function(error) {
         console.log(error);
